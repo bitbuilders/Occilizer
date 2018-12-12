@@ -108,9 +108,17 @@ public class AudioHandler : Singleton<AudioHandler>
 
     void MakeFrequencyBands()
     {
+        /*
+         * 0 - 60 hertz
+         * 60 - 250 hertz
+         * 0 - 60 hertz
+         * 0 - 60 hertz
+         * 0 - 60 hertz
+         * 0 - 60 hertz
+         */
 
         /*
-         * 0 
+         * 0 - 2
          * 1
          * 2
          * 3
@@ -129,12 +137,11 @@ public class AudioHandler : Singleton<AudioHandler>
          * 
          */
 
-        int maxFrequency = (int)FrequencyBandSize / 2;
+        float scaleFactor = (int)FrequencyBandSize / 8.0f;
+        float sampleFactor = (int)SampleSize / 512.0f;
         for (int i = 0; i < m_frequencyBands.Length; i++)
         {
-            int sampleCount = ((int)Mathf.Pow(2, i) * 2);
-            //int sampleCount = ((int)Mathf.Pow(2, i) * 2);
-
+            int sampleCount = (int)(Mathf.Pow(2, (i / scaleFactor)) * 2.0f * sampleFactor);
             float average = 0.0f;
             for (int j = 0; j < sampleCount; j++)
             {

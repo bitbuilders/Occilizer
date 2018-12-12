@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c98052a02c6fa4b4ca3051f33dafbfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_size: 512
-  m_frequencyBandSize: 16
-  m_bufferPercentSpeed: 0.5
+  m_size: 1024
+  m_frequencyBandSize: 32
+  m_bufferPercentSpeed: 0.35
   m_audioBand: []
   m_audioBandBuffer: []
 --- !u!82 &297943476
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cube: {fileID: 1967411133599064, guid: dbfecfd287b21844b8c2b1fce2c386a8, type: 2}
-  m_radius: 5
+  m_radius: 8
   m_useBuffer: 1
   m_maxCubeScale: 5
 --- !u!1 &1789711997
